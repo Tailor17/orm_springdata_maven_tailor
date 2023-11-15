@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity(name = "Custa")
 @Table(name = "Custa")
-public class Custa extends Processo {
+public class Custa {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
     private Date dataCusta;
@@ -75,8 +75,8 @@ public class Custa extends Processo {
         return processo;
     }
 
-    public void setCusta(Custa custa) {
-        this.processo = custa;
+    public void setProcesso(Processo processo) {
+        this.processo = processo;
     }
 
     @Override

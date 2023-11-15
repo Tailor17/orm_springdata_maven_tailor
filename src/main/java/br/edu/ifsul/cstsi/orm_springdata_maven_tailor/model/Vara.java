@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity(name = "Vara")
 @Table(name = "Vara")
-public class Vara extends Processo {
+public class Vara {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Idvara;

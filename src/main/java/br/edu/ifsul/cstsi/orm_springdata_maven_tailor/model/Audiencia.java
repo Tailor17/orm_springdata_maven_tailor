@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity(name = "Audiencia")
 @Table(name = "Audiencia")
-class Audiencia extends Processo {
+public class Audiencia{
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private Date dataAudiencia;
@@ -37,13 +37,7 @@ class Audiencia extends Processo {
         this.processo = processo;
     }
 
-    public Audiencia(Long numeroProcesso, Date aberturaProcesso, Date conclusaoProcesso, String descricaoProcesso, Situacao situacaoProcesso, List<Custa> custas, List<Audiencia> audiencias, List<Vara> varas, Long id, Date dataAudiencia, String parecerAudiencia, Processo processo) {
-        super(numeroProcesso, aberturaProcesso, conclusaoProcesso, descricaoProcesso, situacaoProcesso, custas, audiencias, varas);
-        Id = id;
-        this.dataAudiencia = dataAudiencia;
-        this.parecerAudiencia = parecerAudiencia;
-        this.processo = processo;
-    }
+
 
     public Long getId() {
         return Id;

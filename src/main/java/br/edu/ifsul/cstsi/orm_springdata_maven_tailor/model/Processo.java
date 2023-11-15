@@ -15,6 +15,7 @@ public class Processo{
     private Date conclusaoProcesso;
     private  String descricaoProcesso;
     private Situacao situacaoProcesso;
+
     @OneToMany
     private List<Custa> custas = new ArrayList<>();
     @OneToMany
