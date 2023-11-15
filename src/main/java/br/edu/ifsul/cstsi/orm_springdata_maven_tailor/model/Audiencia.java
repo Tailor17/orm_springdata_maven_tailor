@@ -1,19 +1,18 @@
 package br.edu.ifsul.cstsi.orm_springdata_maven_tailor.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 import java.util.List;
 
-@Entity
-public class Audiencia extends Processo {
+@Entity(name = "Audiencia")
+@Table(name = "Audiencia")
+class Audiencia extends Processo {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private Date dataAudiencia;
     private String parecerAudiencia;
+    @ManyToOne
     private Processo processo;
 
     public Integer registrarAudiencia() {

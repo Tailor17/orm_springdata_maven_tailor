@@ -1,19 +1,19 @@
 package br.edu.ifsul.cstsi.orm_springdata_maven_tailor.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
-@Entity
+
+@Entity(name = "Custa")
+@Table(name = "Custa")
 public class Custa extends Processo {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
     private Date dataCusta;
     private String descricaoCusta;
     private Double valorCusta;
-    private Custa custa;
+    @ManyToOne
+    private Processo processo;
 
     public Integer registrarCusta() {
         return null;
@@ -36,7 +36,7 @@ public class Custa extends Processo {
         this.dataCusta = dataCusta;
         this.descricaoCusta = descricaoCusta;
         this.valorCusta = valorCusta;
-        this.custa = custa;
+        this.processo = processo;
     }
 
     public Long getID() {
@@ -71,12 +71,12 @@ public class Custa extends Processo {
         this.valorCusta = valorCusta;
     }
 
-    public Custa getCusta() {
-        return custa;
+    public Processo getProcesso() {
+        return processo;
     }
 
     public void setCusta(Custa custa) {
-        this.custa = custa;
+        this.processo = custa;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class Custa extends Processo {
                 ", dataCusta=" + dataCusta +
                 ", descricaoCusta='" + descricaoCusta + '\'' +
                 ", valorCusta=" + valorCusta +
-                ", custa=" + custa +
+                ", custa=" + processo +
                 '}';
     }
 }

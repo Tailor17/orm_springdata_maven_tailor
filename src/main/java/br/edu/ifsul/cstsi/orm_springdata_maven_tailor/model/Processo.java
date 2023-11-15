@@ -1,25 +1,25 @@
 package br.edu.ifsul.cstsi.orm_springdata_maven_tailor.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Entity
-public class Processo {
+@Entity(name = "Processo")
+@Table(name = "Processo")
+public class Processo{
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numeroProcesso;
     private Date aberturaProcesso;
     private Date conclusaoProcesso;
     private  String descricaoProcesso;
     private Situacao situacaoProcesso;
-
+    @OneToMany
     private List<Custa> custas = new ArrayList<>();
-    private List<Audiencia>audiencias = new ArrayList<>(1);
+    @OneToMany
+    private List<Audiencia>audiencias = new ArrayList<>();
+    @OneToMany
     private List<Vara> varas = new ArrayList<>();
 
     public Integer registrarProcesso() {
