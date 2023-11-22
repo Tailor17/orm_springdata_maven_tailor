@@ -2,6 +2,7 @@ package br.edu.ifsul.cstsi.orm_springdata_maven_tailor.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,8 +12,8 @@ import java.util.List;
 public class Processo{
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numeroProcesso;
-    private Date aberturaProcesso;
-    private Date conclusaoProcesso;
+    private LocalDate aberturaProcesso;
+    private LocalDate conclusaoProcesso;
     private  String descricaoProcesso;
     private Situacao situacaoProcesso;
 
@@ -43,10 +44,7 @@ public class Processo{
         super();
     }
 
-    public Processo(Long numeroProcesso, Date aberturaProcesso,
-                    Date conclusaoProcesso, String descricaoProcesso,
-                    Situacao situacaoProcesso, List<Custa> custas,
-                    List<Audiencia> audiencias, List<Vara> varas) {
+    public Processo(Long numeroProcesso, LocalDate aberturaProcesso, LocalDate conclusaoProcesso, String descricaoProcesso, Situacao situacaoProcesso, List<Custa> custas, List<Audiencia> audiencias, List<Vara> varas) {
         this.numeroProcesso = numeroProcesso;
         this.aberturaProcesso = aberturaProcesso;
         this.conclusaoProcesso = conclusaoProcesso;
@@ -65,19 +63,19 @@ public class Processo{
         this.numeroProcesso = numeroProcesso;
     }
 
-    public Date getAberturaProcesso() {
+    public LocalDate getAberturaProcesso() {
         return aberturaProcesso;
     }
 
-    public void setAberturaProcesso(Date aberturaProcesso) {
+    public void setAberturaProcesso(LocalDate aberturaProcesso) {
         this.aberturaProcesso = aberturaProcesso;
     }
 
-    public Date getConclusaoProcesso() {
+    public LocalDate getConclusaoProcesso() {
         return conclusaoProcesso;
     }
 
-    public void setConclusaoProcesso(Date conclusaoProcesso) {
+    public void setConclusaoProcesso(LocalDate conclusaoProcesso) {
         this.conclusaoProcesso = conclusaoProcesso;
     }
 

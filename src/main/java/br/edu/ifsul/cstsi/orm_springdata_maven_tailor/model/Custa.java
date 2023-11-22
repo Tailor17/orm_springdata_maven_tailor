@@ -2,14 +2,16 @@ package br.edu.ifsul.cstsi.orm_springdata_maven_tailor.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity(name = "Custa")
 @Table(name = "Custa")
 public class Custa {
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
-    private Date dataCusta;
+    private LocalDate dataCusta;
     private String descricaoCusta;
     private Double valorCusta;
     @ManyToOne
@@ -31,7 +33,7 @@ public class Custa {
         super();
     }
 
-    public Custa(Long ID, Date dataCusta, String descricaoCusta, Double valorCusta, Custa custa) {
+    public Custa(Long ID, LocalDate dataCusta, String descricaoCusta, Double valorCusta, Processo processo) {
         this.ID = ID;
         this.dataCusta = dataCusta;
         this.descricaoCusta = descricaoCusta;
@@ -47,11 +49,11 @@ public class Custa {
         this.ID = ID;
     }
 
-    public Date getDataCusta() {
+    public LocalDate getDataCusta() {
         return dataCusta;
     }
 
-    public void setDataCusta(Date dataCusta) {
+    public void setDataCusta(LocalDate dataCusta) {
         this.dataCusta = dataCusta;
     }
 
@@ -86,7 +88,7 @@ public class Custa {
                 ", dataCusta=" + dataCusta +
                 ", descricaoCusta='" + descricaoCusta + '\'' +
                 ", valorCusta=" + valorCusta +
-                ", custa=" + processo +
+                ", processo=" + processo +
                 '}';
     }
 }

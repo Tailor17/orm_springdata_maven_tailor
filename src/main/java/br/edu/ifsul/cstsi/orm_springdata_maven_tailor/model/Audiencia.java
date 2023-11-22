@@ -2,6 +2,7 @@ package br.edu.ifsul.cstsi.orm_springdata_maven_tailor.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
 public class Audiencia{
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private Date dataAudiencia;
+    private LocalDate dataAudiencia;
     private String parecerAudiencia;
     @ManyToOne
     private Processo processo;
@@ -30,14 +31,12 @@ public class Audiencia{
         super();
     }
 
-    public Audiencia(Long id, Date dataAudiencia, String parecerAudiencia, Processo processo) {
+    public Audiencia(Long id, LocalDate dataAudiencia, String parecerAudiencia, Processo processo) {
         Id = id;
         this.dataAudiencia = dataAudiencia;
         this.parecerAudiencia = parecerAudiencia;
         this.processo = processo;
     }
-
-
 
     public Long getId() {
         return Id;
@@ -47,11 +46,11 @@ public class Audiencia{
         Id = id;
     }
 
-    public Date getDataAudiencia() {
+    public LocalDate getDataAudiencia() {
         return dataAudiencia;
     }
 
-    public void setDataAudiencia(Date dataAudiencia) {
+    public void setDataAudiencia(LocalDate dataAudiencia) {
         this.dataAudiencia = dataAudiencia;
     }
 
