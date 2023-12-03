@@ -11,6 +11,7 @@ public class OrmSpringdataMavenTailorApplication {
 
     public static void main(String[] args) {
         run(OrmSpringdataMavenTailorApplication.class, args);
+        HomeController.main(null);
     }
 
 }

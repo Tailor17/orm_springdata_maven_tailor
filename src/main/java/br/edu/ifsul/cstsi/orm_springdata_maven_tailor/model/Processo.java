@@ -1,10 +1,10 @@
 package br.edu.ifsul.cstsi.orm_springdata_maven_tailor.model;
 
+import br.edu.ifsul.cstsi.orm_springdata_maven_tailor.audiencia.Audiencia;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity(name = "Processo")
