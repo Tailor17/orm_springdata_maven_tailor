@@ -17,10 +17,10 @@ public class HomeController {
 				"""
 
 					1. Audiencias
-					2. Manter Produtos
-					3. Manter Clientes
-					4. Manter Itens
-					5. Manter Pedidos
+					2. Em desenvolvimento
+					3. Em desenvolvimento
+					4. Em desenvolvimento
+					5. Em desenvolvimento
 					Opção (Zero p/sair):\s""");
 			opcao = input.nextInt();
 			input.nextLine();

@@ -24,9 +24,30 @@ public class AudienciaService {
         }
         return null;
     }
+    public Audiencia update(Audiencia audiencia) {
+        Assert.notNull(audiencia.getId(),"Não foi possível atualizar o registro");
+
+        // Busca o produto no banco de dados
+        Optional<Audiencia> optional = rep.findById(audiencia.getId());
+        if(optional.isPresent()) {
+            Audiencia db = optional.get();
+            // Copiar as propriedades
+            db.setDataAudiencia(audiencia.getDataAudiencia());
+            db.setParecerAudiencia(audiencia.getParecerAudiencia());
+            db.setSituacao(audiencia.getSituacao());
+            // Atualiza o produto
+            rep.save(db);
+
+            return db;
+        } else {
+            return null;
+            //throw new RuntimeException("Não foi possível atualizar o registro");
+        }
+    }
     public List<Audiencia> getAudiencia() {
         return rep.findAll();
     }
+
     public void delete(Long id) {
         rep.deleteById(id);
     }

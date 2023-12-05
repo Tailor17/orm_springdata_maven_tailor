@@ -23,8 +23,10 @@ public class Audiencia {
     private Long Id;
     private LocalDate dataAudiencia;
     private String parecerAudiencia;
+    private String nomeAudiencia;
     @ManyToOne
     private Processo processo;
+    private boolean situacao;
 
 
 
@@ -41,6 +43,10 @@ public class Audiencia {
 
     public String listarAudiencia() {
         return null;
+    }
+
+    public boolean getSituacao() {
+        return false;
     }
 }
 
